@@ -35,12 +35,14 @@ function closeMemoryForm() {
     memoryModal.classList.add('hidden');
 }
 
-function saveMemory(e) {
-    e.preventDefault(); // Prevent page from reloading
+// Find this function in your script.js
+
+function saveMemory(e) { // <-- Make sure 'e' is here
+    e.preventDefault(); // <-- ADD THIS LINE! This is the fix.
 
     // 1. Create the new memory object from the form
     const newMemory = {
-        id: Date.now(), // Unique ID using timestamp
+        id: Date.now(),
         lat: tempCoords.lat,
         lng: tempCoords.lng,
         title: document.getElementById('title').value,
